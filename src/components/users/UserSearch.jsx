@@ -43,7 +43,7 @@ const UserSearch = () => {
           </div>
         </form>
       </div>
-      {users.length > 0 && (
+      {users?.length > 0 && (
         <div>
           <button
             className="btn btn-ghost btn-lg"
