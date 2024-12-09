@@ -11,8 +11,11 @@ const github = axios.create({
 });
 
 export const searchUsers = async (text) => {
+  const params = new URLSearchParams({
+    q: text,
+  });
   try {
-    const response = await github.get(`/search/users?q=${text}`);
+    const response = await github.get(`/search/users?${params}`);
     return response.data.items;
   } catch (error) {
     console.log(error);
